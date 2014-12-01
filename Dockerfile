@@ -18,6 +18,8 @@ ADD ./sudoers.d/ /etc/sudoers.d/
 ADD ./cron.d/ /etc/cron.d/
 # Add the install commands
 ADD ./install.sh /
+# Add job definition file
+ADD ./jobs.xml /tmp/jobs.xml
 
 # Change Rundeck admin from default to CH4NGE_Me
 ENV RDPASS CH4NGE_Me
@@ -25,10 +27,11 @@ ENV RDPASS CH4NGE_Me
 # Change MYHOST to your IP or hostname
 ENV MYHOST 127.0.0.1
 
+EXPOSE 4440 22
+
 # Run the installation script
 RUN /install.sh
 
 # Start the services with supervisord
 CMD ["/usr/bin/supervisord", "--nodaemon"]
 
-EXPOSE 4440 22

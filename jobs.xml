@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<joblist> 
+  <job> 
+    <id>1ba6bf74-f150-4e34-b694-0d47a949dfe0</id>  
+    <loglevel>INFO</loglevel>  
+    <sequence keepgoing="false" strategy="node-first"> 
+      <command> 
+        <exec>uptime</exec> 
+      </command> 
+    </sequence>  
+    <description>Show uptime output on all AIX servers</description>  
+    <name>TestJob</name>  
+    <context> 
+      <project>Test</project> 
+    </context>  
+    <dispatch> 
+      <threadcount>1</threadcount>  
+      <keepgoing>false</keepgoing>  
+      <excludePrecedence>true</excludePrecedence>  
+      <rankOrder>ascending</rankOrder> 
+    </dispatch>  
+    <uuid>1ba6bf74-f150-4e34-b694-0d47a949dfe0</uuid>  
+    <nodefilters> 
+      <filter>osFamily: unix</filter> 
+    </nodefilters> 
+  </job>  
+</joblist>
